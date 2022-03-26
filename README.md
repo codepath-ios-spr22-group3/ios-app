@@ -1,7 +1,7 @@
 Original App Design Project - README Template
 ===
 
-# APP_NAME_HERE
+# Habit Tracker
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -11,16 +11,15 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-[Description of your app]
+A productivity app that allows users to create custom habits/tasks that they can check off if they have been completed that day/week/month or specific time period.
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
-- **Category:**
-- **Mobile:**
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Category:** Productivity
+- **Mobile:** This app is only supported on mobile (iOS) for now, but we may support other platforms in the future.
+- **Story:** Allows users to create custom habits/tasks where they can view whether they have been following their set goals or not.
+- **Market:** Any individual, regardless of age/gender/sexuality could choose to use this app.
+- **Habit:** This app could be used as often as the time period of the habits/tasks the user sets as goals.
+- **Scope:** First we would want our users to create custom habits/tasks with a specific time period on when they plan on completing those habits/tasks (hourly/daily/weekly/monthly/etc). Then they should be checking off those habits/tasks when they are completed.
 
 ## Product Spec
 
@@ -38,6 +37,14 @@ Original App Design Project - README Template
 
 ### 2. Screen Archetypes
 
+* Home
+   * Home page
+* Calendar
+   * Calendar view of the month as a different navigation (bottom tab bar)
+* Data
+   * Visual representation navigation bottom tab bar (like pie charts/bar graph of how well the user followed their set habits/tasks)
+   * Perhaps we could animate the graph
+
 * [list first screen here]
    * [list associated required story here]
    * ...
@@ -49,9 +56,10 @@ Original App Design Project - README Template
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Today
+* Stats
+* Habits
+* Settings
 
 **Flow Navigation** (Screen to Screen)
 
