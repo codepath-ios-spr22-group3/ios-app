@@ -73,8 +73,7 @@ A productivity app that allows users to create custom habits/tasks that they can
 * Settings -> Toggle and save settings
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+![1](https://user-images.githubusercontent.com/67300899/160302620-28a07b51-d7b7-4890-82cd-3a687c57f565.jpeg)
 
 ### [BONUS] Digital Wireframes & Mockups
 
