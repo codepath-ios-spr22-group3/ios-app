@@ -27,48 +27,50 @@ A productivity app that allows users to create custom habits/tasks that they can
 
 **Required Must-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* User can sign up and make an account with our app
+* User can log in to their account
+* User can log out of their account
+* User can create custom habits/tasks and set a specific time period for the habit/task to repeat
+* User can view what habits/tasks they need to do or have already done on the current day
+* User can view a summary of whether they have been keeping up/completing their set habits/tasks on time
 
 **Optional Nice-to-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* User must verify their email/phone number first before they can log in
+* User can stay logged into their account when they open the app until they log out (maybe "Remember me" option)
+* Settings or preferences page for the user
+* Light mode and dark mode
+* Streak animation (for if you have completed/kept up with your daily habits/tasks) 🔥
 
 ### 2. Screen Archetypes
 
-* Home
-   * Home page
-* Calendar
-   * Calendar view of the month as a different navigation (bottom tab bar)
-* Data
-   * Visual representation navigation bottom tab bar (like pie charts/bar graph of how well the user followed their set habits/tasks)
-   * Perhaps we could animate the graph
-
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Login
+   * The user will be able to log in with their username and password
+* Sign Up
+   * The user can sign up for an account with our app using a unique username and password
+* Current Day Habits/Tasks List
+   * The user will be able to see their habits/tasks for the day including the ones they have already done and the ones they still need to do
+* Settings Page
+   * The user can store their app preferences here and change the app theme to light mode or dark mode
+* Summary Page
+   * This page will track how well our user has been keeping up with their habits/tasks and show a data summary with maybe a graph or chart
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
 * Today
-* Stats
 * Habits
+* Summary
 * Settings
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* Log in/Sign up -> Goes to Today page on success
+* Today -> View habits/tasks that need to be completed today
+* Habits -> Create custom habits/tasks to complete
+* Summary -> View data summary or data visualization of user's progress
+* Settings -> Toggle and save settings
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
