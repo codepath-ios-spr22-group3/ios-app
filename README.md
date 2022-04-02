@@ -73,17 +73,100 @@ A productivity app that allows users to create custom habits/tasks that they can
 * Settings -> Toggle and save settings
 
 ## Wireframes
-![1](https://user-images.githubusercontent.com/67300899/160302620-28a07b51-d7b7-4890-82cd-3a687c57f565.jpeg)
+<img src="https://user-images.githubusercontent.com/67300899/160302620-28a07b51-d7b7-4890-82cd-3a687c57f565.jpeg" height=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
 ### [BONUS] Interactive Prototype
 
-## Schema 
-[This section will be completed in Unit 9]
+## Schema
 ### Models
-[Add table of models]
+#### User
+| Property  | Type     | Description |
+| ----------| -------- | ------------|
+| userId    | Int      | Unique user ID (primary key) |
+| createdAt | DateTime | Date and time of when the user account was created |
+| username  | String   | User's account name |
+| password  | String   | User's account password |
+#### Habit
+| Property         | Type     | Description |
+| -----------------| -------- | ------------|
+| habitId          | Int      | Unique user ID (primary key) |
+| createdAt        | DateTime | Date and time of when the habit was created |
+| habitDescription | String   | Description of the habit |
+| habitRepeat      | Int      | How often the habit should be repeated in seconds |
+| habitIsDone      | Boolean  | If the habit has been completed for the day/week/month/etc. |
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+   - Login Page
+     ```swift
+     let username = usernameField.text!
+     let password = passwordField.text!
+        
+     PFUser.logInWithUsername(inBackground: username,
+                              password: password) { (user, error) in
+        if user != nil {
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
+        }
+        else {
+            print("Error: \(String(describing: error?.localizedDescription))")
+        }
+     }
+     ```
+   - Sign Up Page
+     ```swift
+     // Create a user and get their username and password
+     let user = PFUser()
+     user.username = usernameField.text
+     user.password = passwordField.text
+        
+     // If sign up is a success, we can login
+     user.signUpInBackground { (success, error) in
+         if success {
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
+         }
+         else {
+            print("Error: \(String(describing: error?.localizedDescription))")
+         }
+     }
+     ```
+   - Tasks List Page
+      - (Read/GET) Query all the habits for today and planned habits for other days
+         ```swift
+         let query = PFQuery(className:"Habit")
+         query.whereKey("user", equalTo: currentUser)
+         query.order(byDescending: "createdAt")
+         query.findObjectsInBackground { (habits: [PFObject]?, error: Error?) in
+            if let error = error { 
+               print(error.localizedDescription)
+            }
+            else if let habits = habits {
+               print("Successfully retrieved \(habits.count) habits.")
+               // TODO: Do something with habits...
+            }
+         }
+         ```
+      - (Create/POST) Create a new habit
+        ```swift
+        // Create the habit
+        let habit = PFObject(className: "Habit")
+        habit["description"] = text
+        habit["repeat"] = repeat
+        habit["isDone"] = isDone
+
+        habit.add(habit, forKey: "habits")
+        habit.saveInBackground { (success, error) in
+           if success {
+               print("Habit created!")
+           }
+           else {
+               print("Error creating habit!")
+           }
+        }
+        tableView.reloadData()
+        ```
+      - (Delete) Delete an existing habit
+   - Summary Page
+      - (Read/GET) Number of habits done throughout a time period week/month/year/etc.
+   - Settings Page
+      - (Read/GET) Gets the user preferred settings
+#### [OPTIONAL:] Existing API Endpoints
